@@ -1,6 +1,6 @@
-const loginBtn = document.getElementById("btn");
+const loginBtn = document.getElementById("loginBtn");
 const userName = document.getElementById("userName");
-const Password = document.getElementById("password");
+const Password = document.getElementById("Password");
 const logInOut = document.getElementById("logInOut");
 
 const user = [
@@ -17,23 +17,23 @@ if (localStorage.getItem("user")) {
 
 // Om true visa välkomst sida för inloggad = printName och ta bort loggin formuläret - klar
 // Om false visa inloggningformulär
-loginBtn.addEventListener('click', () => {
-    console.log('klick på knapp');
-    //console.log("userName", userName);
-if( user[0].Password === Password.value && user[0].userName === userName.value) {
+/* loginBtn.addEventListener('click', () => {
+  console.log('klick på knapp');
+    console.log("userName", userName);
+ if( user[0].Password === Password.value && user[0].userName === userName.value) {
     
     //Spara användare i localstorage
-    console.log("user i Event Listener", user);
+    //console.log("user i Event Listener", user);
     localStorage.setItem("user", user[0].userName);
     printName();
     } else {
         PrintUnknow(); 
     }
-});
+}); */ 
 
 //Hämta namnet från Ls och skriv ut på sidan
 function printName() {
-    logInOut.innerHTML = ""
+    logInOut.innerHTML = "";
     let user = localStorage.getItem("user");
 
     //Skapa logga ut knapp
@@ -41,6 +41,7 @@ function printName() {
     logOutBtn.innerText = "Logga ut";
     logOutBtn.addEventListener('click', () => {
         localStorage.removeItem(user);
+        //localStorage.clear();
         logIn();
     });
 
@@ -58,6 +59,42 @@ function PrintUnknow() {
 
 //Skapa function log in formulär
 function logIn() {
+    demo.innerHTML = "";
+    logInOut.innerHTML = "";
+
+    let loginBtn = document.createElement("button");
+    loginBtn.innerText = "Logga in";
+    loginBtn.addEventListener('click', () => {
+        console.log('klick på knapp');
+        //console.log("userName", userName);
+    if( user[0].Password === Password.value && user[0].userName === userName.value) {
+        
+        //Spara användare i localstorage
+        console.log("user i Event Listener", user);
+        localStorage.setItem("user", user[0].userName);
+        printName();
+        } else {
+            PrintUnknow(); 
+        }
+    }); 
     
+    //logInOut.innerHTML += '<p>Användarnamn</p>';
+    let userName = document.createElement('input');
+    userName.id = "userName";
+    userName.type = "text";
+    //logInOut.innerHTML += '<p>Användarnamn</p>';
+    //logInOut.innerHTML += '<input type="text" id="userName"></input>';
+    //logInOut.innerHTML += '<p>lösenord</p>';
+    let Password = document.createElement('input');
+    Password.id = "Password";
+    Password.type = "password";
+    
+    //logInOut.innerHTML += '<input type"password" id="Password"></input> <button id="btn">logga in</button>'
+    
+    logInOut.innerHTML += '<p>Användarnamn</p>';
+    logInOut.appendChild(userName);
+    logInOut.innerHTML += '<p>lösenord</p>';
+    logInOut.appendChild(Password);
+    logInOut.appendChild(loginBtn);
 }
 
