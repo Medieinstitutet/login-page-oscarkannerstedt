@@ -46,8 +46,8 @@ function printName() {
     });
 
     logInOut.appendChild(logOutBtn);
-
-    demo.innerText = "Välkommen " + userName.value;
+    let userName =  localStorage.getItem("user");
+    demo.innerHTML = "Välkommen " + userName.value;
     demo.innerHTML += '<div id="picture"></div>'
 }
 
@@ -67,6 +67,9 @@ function logIn() {
     loginBtn.addEventListener('click', () => {
        // console.log('klick på knapp');
         //console.log("userName", userName);
+
+        const userName = document.getElementById("userName");
+        const Password = document.getElementById("Password");
         console.log("Klick på knapp", Password.value, userName.value)
     if( user[0].Password === Password.value && user[0].userName === userName.value) {
         
