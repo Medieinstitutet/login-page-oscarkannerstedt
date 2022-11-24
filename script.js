@@ -23,7 +23,7 @@ function printName() {
     let logOutBtn = document.createElement("button")
     logOutBtn.innerText = "Logga ut";
     logOutBtn.addEventListener('click', () => {
-        localStorage.removeItem(user);
+        localStorage.removeItem("user");
         logIn();
     });
 
