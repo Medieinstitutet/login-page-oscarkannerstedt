@@ -65,8 +65,9 @@ function logIn() {
     let loginBtn = document.createElement("button");
     loginBtn.innerText = "Logga in";
     loginBtn.addEventListener('click', () => {
-        console.log('klick på knapp');
+       // console.log('klick på knapp');
         //console.log("userName", userName);
+        console.log("Klick på knapp", Password.value, userName.value)
     if( user[0].Password === Password.value && user[0].userName === userName.value) {
         
         //Spara användare i localstorage
@@ -78,18 +79,14 @@ function logIn() {
         }
     }); 
     
-    //logInOut.innerHTML += '<p>Användarnamn</p>';
+    // Input användarnamn och lösenord med logga in knapp
     let userName = document.createElement('input');
     userName.id = "userName";
     userName.type = "text";
-    //logInOut.innerHTML += '<p>Användarnamn</p>';
-    //logInOut.innerHTML += '<input type="text" id="userName"></input>';
-    //logInOut.innerHTML += '<p>lösenord</p>';
+  
     let Password = document.createElement('input');
     Password.id = "Password";
     Password.type = "password";
-    
-    //logInOut.innerHTML += '<input type"password" id="Password"></input> <button id="btn">logga in</button>'
     
     logInOut.innerHTML += '<p>Användarnamn</p>';
     logInOut.appendChild(userName);
