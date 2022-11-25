@@ -50,11 +50,11 @@ function logIn() {
        
         const userName = document.getElementById("userName");
         const Password = document.getElementById("Password");
-        console.log("Klick på knapp", Password.value, userName.value)
+       // console.log("Klick på knapp", Password.value, userName.value)
     if( user[0].Password === Password.value && user[0].userName === userName.value) {
         
         //Spara användare i localstorage
-        console.log("user i Event Listener", user);
+       // console.log("user i Event Listener", user);
         localStorage.setItem("user", user[0].userName);
         printName();
         } else {
