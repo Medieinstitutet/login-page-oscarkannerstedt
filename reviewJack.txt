@@ -1,0 +1,12 @@
+1. script.js rad 1-4, jag skulle hålla mig mer konsekvent till att nämna mina consts i camelCase
+
+2. script.js rad 11-15, jag skulle ge mer semantiska namn på funktionerna, förslagsvis loggedOutView och loggedInView
+
+3. script.js rad 37, cammelCase igen
+
+4. script.js rad 37, Jag tror inte att denna behöver en egen funktion, utan jag skulle nog fläska in funktionens innehåll i if - else statet på rade 61 :) 
+
+5. Fin julbild!
+
+6. Behövs logInOut diven? tror det skulle gå att skippa den helt och ersätta den med loginBtn och toggla den med display block/ display none (asså då ändra dens style)
+
